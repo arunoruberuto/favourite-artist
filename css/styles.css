@@ -1,0 +1,174 @@
+@font-face {
+    font-family: 'KaiseiTokumin';
+    src: url('../font/KaiseiTokumin-Regular.woff2') format('woff2'),
+         url('../font/KaiseiTokumin-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+        
+        * {
+            margin: 0;
+            padding: 0;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Dancing Script', serif;
+            background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg=='), #f5f3e7;
+        }
+
+        /* Hero Section */
+        .hero {
+            height: 100vh;
+            position: relative;
+            overflow: hidden;
+        }
+
+        .hero-slideshow {
+            position: absolute;
+            width: 100%;
+            height: 100%;
+            animation: slideshow 35s infinite;
+            background-size: cover;
+        }
+
+        @keyframes slideshow {
+            0%, 100% { background-image: url('../images/index1.jpg'); }
+            20% { background-image: url('../images/index2.jpg'); }
+            40% { background-image: url('../images/index3.jpg'); }
+            60% { background-image: url('../images/index4.jpg'); }
+            80% { background-image: url('../images/index5.jpg'); }
+        }
+
+        .hero-content {
+            position: relative;
+            z-index: 2;
+            color: white;
+            text-align: center;
+            padding-top: 20vh;
+            text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.5);
+        }
+
+        .hero h1 {
+            font-size: 4.5rem;
+            margin-bottom: 1rem;
+            font-weight: normal;
+        }
+
+        .hero p {
+            font-size: 1.5rem;
+        }
+
+        /* Cloud Animation */
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            background: url('../images/cloud.png') no-repeat;
+            background-size: contain;
+            animation: drift 30s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes drift {
+            from { left: -20%; }
+            to { left: 120%; }
+        }
+
+        /* Introduction Section */
+        .intro {
+            padding: 4rem 2rem;
+            max-width: 1200px;
+            margin: 0 auto;
+            display: flex;
+            align-items: center;
+            gap: 2rem;
+        }
+
+        .intro-text {
+            font-family: 'KaiseiTokumin', cursive;
+            flex: 2;
+            font-size: 1.2rem;
+            line-height: 1.6;
+            color: #444;
+        }
+
+        .intro img {
+            flex: 1;
+            max-width: 300px;
+            border-radius: 10px;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+        }
+
+        /* Footer */
+        footer {
+            border-top: 3px solid black;
+            background: linear-gradient(135deg, #2e6b2e, #1e4620);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .music-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2e6b2e;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        .music-button:hover {
+            background: #3a7b3a;
+        }
+
+        .speaker-icon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .music-button.muted::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #e74c3c;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        .social-links {
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .reminder {
+            font-family: 'Poppins';
+            font-size: 1.5rem;
+            margin: 1rem;
+            font-style: italic;
+            color: orange;
+        }

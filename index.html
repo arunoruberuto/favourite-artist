@@ -1,0 +1,66 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The World of Bob Ross</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="icon" href="images/bob_logo.png" type="image/png">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar-container" id="sidebar">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <ul class="menu hidden" id="menu">
+            <li class="menu-item"><a href="index.html" class="animated-link">Home</a></li>
+            <li class="menu-item"><a href="bio.html" class="animated-link">Biography</a></li>
+            <li class="menu-item"><a href="gallery.html" class="animated-link">Paintings</a></li>
+            <li class="menu-item"><a href="wisdom.html" class="animated-link">Quotes</a></li>
+        </ul>
+    </div>
+
+    <section class="hero">
+        <div class="hero-slideshow"></div>
+        <div class="cloud" style="top: 5%; animation-delay: -10s;"></div>
+        <div class="cloud" style="top: 20%; animation-delay: -5s;"></div>
+        <div class="cloud" style="top: 40%; animation-delay: -15s;"></div>
+        <div class="hero-content">
+            <h1>Welcome to the World of Bob Ross</h1>
+            <p>Where Every Day is a Happy Little Adventure</p>
+        </div>
+    </section>
+
+    <section class="intro">
+        <div class="intro-text">
+            <p>ボブ・ロスは単なる画家ではなく、平和と創造性、そして喜びの象徴でした。彼は1983年から1994年にかけて放送されたテレビ番組 The Joy of Painting（ボブの絵画教室）のホストとして知られ、穏やかな声と優しい語り口で、30分のうちに白いキャンバスを美しい風景画へと変えてしまう驚異的な技術で世界中の視聴者を魅了しました。
+
+                <br><br>彼の特徴的な技法である ウェット・オン・ウェット（湿った絵の具の上に直接描く技法）や、柔らかく自然な色使いは、初心者でも気軽に絵を楽しめるように工夫されていました。「幸せな小さな木々」や「失敗なんてないんです。ただの素敵な偶然ですよ」といった彼の名言は、多くの人々に恐れず創造することの大切さを教えてくれました。
+                
+                <br><br>1995年に他界した後も、彼の作品や番組は世界中で愛され続けています。ボブ・ロスの穏やかな筆さばきを眺めているだけで、まるで瞑想のように心が癒される――彼の芸術は今もなお、「誰もがアートを楽しめる」ということを私たちに思い出させてくれます。</p>
+        </div>
+        <img src="images/bob1.png" alt="Bob Ross smiling">
+    </section>
+
+<footer>
+    <div class="music-toggle">
+        <button class="music-button" onclick="toggleMusic()">
+            <span class="speaker-icon">🔊</span>
+        </button>
+        <audio id="bg-music" loop autoplay>
+            <source src="music/LARRY OWENS - INTERLUDE (BOB ROSS THE JOY OF PAINTING FULL THEME).mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <div class="social-links">
+        <a href="https://www.bobross.com"  class="animated-link" target="_blank">Official Website</a>
+        <a href="https://www.facebook.com/TheJoyofPaintingWithBobRoss/"  class="animated-link" target="_blank">Facebook</a>
+        <a href="https://x.com/BobRossOfficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"  class="animated-link" target="_blank">X</a>
+    </div>
+    <p class="reminder">Let’s make some happy little memories today.</p>
+</footer>
+<script src="js/script.js"></script>
+<script src="js/hamburger.js"></script>
+</body>
+</html>

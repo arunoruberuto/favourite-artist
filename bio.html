@@ -1,0 +1,100 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>The Life of Bob Ross</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-bio.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="icon" href="images/bob_logo.png" type="image/png">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar-container" id="sidebar">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <ul class="menu hidden" id="menu">
+            <li class="menu-item"><a href="index.html" class="animated-link">Home</a></li>
+            <li class="menu-item"><a href="bio.html" class="animated-link">Biography</a></li>
+            <li class="menu-item"><a href="gallery.html" class="animated-link">Paintings</a></li>
+            <li class="menu-item"><a href="wisdom.html" class="animated-link">Quotes</a></li>
+        </ul>
+    </div>
+
+    <header class="header">
+        <div class="cloud" style="top: 5%; animation-delay: -10s;"></div>
+        <div class="cloud" style="top: 20%; animation-delay: -5s;"></div>
+        <h1 class="title">The Life of Bob Ross</h1>
+        <p>"From a humble beginning to inspiring millions with 'The Joy of Painting,' this is the story of Bob Ross."</p>
+    </header>
+
+    <main class="timeline">
+        <section class="era-card">
+            <h2 class="era-title">📌 幼少期と軍歴 (1942–1981)</h2>
+            <ul>
+                <li>フロリダ州デイトナビーチで生まれる</li>
+                <li>18歳でアメリカ空軍に入隊し、20年間勤務</li>
+                <li>厳しい軍隊生活とのバランスを取るために穏やかな態度を身につける</li>
+                <li>アラスカで絵を学び、雪景色にインスピレーションを受ける</li>
+            </ul>
+        </section>
+
+        <div class="image-grid">
+            <img src="images/bob_military.jpg" alt="Bob Ross in military uniform">
+            <img src="images/Bob_Ross_Alaska_Painting_crop.jpg" alt="Early paintings from Alaska">
+        </div>
+
+        <section class="era-card">
+            <h2 class="era-title">🎨 「The Joy of Painting」時代 (1981–1995)</h2>
+            <ul>
+                <li>ビル・アレクサンダーに師事し、ウェット・オン・ウェット技法を習得</li>
+                <li>1983年に「The Joy of Painting」を制作し、31シーズン続く大人気番組に！</li>
+                <li>「誰でも絵を描ける」と何百万人もの人々に教えた</li>
+            </ul>
+        </section>
+
+        <div class="image-grid">
+            <img src="images/bob_early.jpg" alt="Bob Ross in military uniform">
+            <img src="images/bob_painting.jpg" alt="Early paintings from Alaska">
+        </div>
+
+        <div class="video-container">
+            <iframe src="https://www.youtube.com/embed/oh5p5f5_-7A?si=_COZYBaQRyGm0aFi" frameborder="0" allowfullscreen></iframe>
+        </div>
+
+        <section class="trivia-box">
+            <h3>知っていましたか？ 🌲</h3>
+            <p>🎨 ボブ・ロスはテレビ番組で収益を得ていなかった！収入源は画材販売だった<br>
+            🌲 生涯で30,000枚以上の絵を描いた！<br>
+            🐿 動物好きで、リスをよく保護していた</p>
+        </section>
+
+        <div class="timeline-graphic">
+            <div class="timeline-marker">1942<br>Born</div>
+            <div class="timeline-marker">1961<br>Joins Air Force</div>
+            <div class="timeline-marker">1983<br>Show Debut</div>
+            <div class="timeline-marker">1995<br>Passed Away</div>
+        </div>
+    </main>
+
+    <footer>
+        <div class="music-toggle">
+            <button class="music-button" onclick="toggleMusic()">
+                <span class="speaker-icon">🔊</span>
+            </button>
+            <audio id="bg-music" loop autoplay>
+                <source src="music/LARRY OWENS - INTERLUDE (BOB ROSS THE JOY OF PAINTING FULL THEME).mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="social-links">
+            <a href="https://www.bobross.com"  class="animated-link" target="_blank">Official Website</a>
+            <a href="https://www.facebook.com/TheJoyofPaintingWithBobRoss/"  class="animated-link" target="_blank">Facebook</a>
+            <a href="https://x.com/BobRossOfficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"  class="animated-link" target="_blank">X</a>
+        </div>
+        <p class="reminder">Let’s make some happy little memories today.</p>
+    </footer>
+    <script src="js/script-bio.js"></script>
+    <script src="js/hamburger.js"></script>
+</body>
+</html>

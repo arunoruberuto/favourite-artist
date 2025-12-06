@@ -1,0 +1,212 @@
+@font-face {
+    font-family: 'KaiseiTokumin';
+    src: url('../font/KaiseiTokumin-Regular.woff2') format('woff2'),
+         url('../font/KaiseiTokumin-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html, body {
+    overflow-x: hidden;
+    width: 100%;
+}
+
+body {
+    font-family: 'Dancing Script', cursive;
+    background: url('data:image/png;base64,iVBORw0KGgoAAAANSUhEUgAAAAQAAAAECAYAAACp8Z5+AAAAIklEQVQIW2NkQAKrVq36zwjjgzhhYWGMYAEYB8RmROaABADeOQ8CXl/xfgAAAABJRU5ErkJggg=='), #f5f3e7;
+    color: #4a4a4a;
+}
+
+.header {
+    background: linear-gradient(rgba(0,0,0,0.5), rgba(0,0,0,0.5)), 
+                url('../images/index1.jpg');
+    background-size: cover;
+    padding: 4rem 2rem;
+    text-align: center;
+    color: white;
+}
+
+.header p {
+    font-family: 'Dancing Script', cursive;
+    font-size: 1.5rem;
+}
+
+
+.title {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4.5rem;
+    margin-bottom: 1rem;
+}
+
+.timeline {
+    max-width: 800px;
+    margin: 2rem auto;
+    padding: 0 1rem;
+}
+
+.era-card {
+    font-family: 'KaiseiTokumin', cursive;
+    background: white;
+    border-radius: 10px;
+    padding: 2rem;
+    margin: 2rem 0;
+    box-shadow: 0 4px 6px rgba(0,0,0,0.1);
+}
+
+.era-title {
+    color: #2c5d2c;
+    margin-bottom: 1rem;
+    font-size: 1.5rem;
+}
+
+.image-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(250px, 1fr));
+    gap: 1rem;
+    margin: 2rem 0;
+}
+
+.image-grid img {
+    height: 500px;
+    width: 100%;
+    border-radius: 8px;
+}
+
+.video-container {
+    position: relative;
+    padding-bottom: 56.25%;
+    height: 0;
+    margin: 2rem 0;
+}
+
+.video-container iframe {
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    height: 100%;
+}
+
+.trivia-box {
+    font-family: 'KaiseiTokumin', cursive;
+    background: #e8f5e9;
+    border-left: 4px solid #2c5d2c;
+    padding: 1.5rem;
+    margin: 2rem 0;
+}
+
+.timeline-graphic {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    margin: 2rem 0;
+}
+
+.timeline-marker {
+    font-size: 1.5rem;
+    text-align: center;
+    flex: 1;
+    padding: 0.5rem;
+}
+
+        footer {
+            border-top: 3px solid black;
+            background: linear-gradient(135deg, #2e6b2e, #1e4620);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .music-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2e6b2e;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        .music-button:hover {
+            background: #3a7b3a;
+        }
+
+        .speaker-icon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .music-button.muted::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #e74c3c;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        .social-links {
+            font-family: 'Dancing Script', cursive;
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .reminder {
+            font-family: 'Poppins';
+            font-size: 1.5rem;
+            margin: 1rem;
+            font-style: italic;
+            color: orange;
+        }
+
+
+        /* Cloud Animation */
+        .cloud {
+            position: absolute;
+            width: 150px;
+            height: 100px;
+            background: url('../images/cloud.png') no-repeat;
+            background-size: contain;
+            animation: drift 30s linear infinite;
+            opacity: 0.8;
+        }
+
+        @keyframes drift {
+            from { left: -20%; }
+            to { left: 120%; }
+        }        
+
+@media (max-width: 768px) {
+    .title {
+        font-size: 2.5rem;
+    }
+}

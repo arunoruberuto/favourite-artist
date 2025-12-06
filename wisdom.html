@@ -1,0 +1,88 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Words of Wisdom from Bob Ross</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-wisdom.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="icon" href="images/bob_logo.png" type="image/png">
+</head>
+<body>
+    <div class="overlay1"></div>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar-container" id="sidebar">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <ul class="menu hidden" id="menu">
+            <li class="menu-item"><a href="index.html" class="animated-link">Home</a></li>
+            <li class="menu-item"><a href="bio.html" class="animated-link">Biography</a></li>
+            <li class="menu-item"><a href="gallery.html" class="animated-link">Paintings</a></li>
+            <li class="menu-item"><a href="wisdom.html" class="animated-link">Quotes</a></li>
+        </ul>
+    </div>
+    
+    <header>
+        <h1>Words of Wisdom from Bob Ross</h1>
+        <p class="intro">Bob Ross’s words were as soothing as his paintings. Here are some of his most inspiring quotes to brighten your day.</p>
+    </header>
+
+    <div class="grid">
+        <div class="quote-card"  data-translation="「失敗なんてないんだよ、ただの素敵な偶然さ。」">
+            <p class="quote-text">"We don't make mistakes, just happy little accidents."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「近づきすぎると物事は見えにくい。一歩下がって見てみよう。」">
+            <p class="quote-text">"It’s hard to see things when you are too close. Take a step back and look"</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「笑うから気分が良くなるんだ。」">
+            <p class="quote-text">"We don’t laugh because we feel good, we feel good because we laugh."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「学ぶたびに、君は成長する。」">
+            <p class="quote-text">"Anytime you learn, you gain."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「才能とは、追い求める興味のことだよ。練習すれば何でもできる。」">
+            <p class="quote-text">"Talent is a pursued interest. Anything you’re willing to practice, you can do."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「君は何だってできる。ここは君の世界だよ。」">
+            <p class="quote-text">"You can do anything you want to do. This is your world."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「思い切って挑戦しよう。そこには素晴らしいものが待っているよ。」">
+            <p class="quote-text">"Go out on limb. That’s where the fruit is."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「木を友達にすることは素晴らしいことだよ。」">
+            <p class="quote-text">"There’s nothing wrong with having a tree as a friend."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+        <div class="quote-card" data-translation="「毎日、自分を幸せにすることをするのはとても大切なことだ。」">
+            <p class="quote-text">"It’s so important to do something every day that will make you happy."</p>
+            <p class="quote-author">- Bob Ross</p>
+        </div>
+    </div>
+<footer>
+    <div class="music-toggle">
+        <button class="music-button" onclick="toggleMusic()">
+            <span class="speaker-icon">🔊</span>
+        </button>
+        <audio id="bg-music" loop autoplay>
+            <source src="music/LARRY OWENS - INTERLUDE (BOB ROSS THE JOY OF PAINTING FULL THEME).mp3" type="audio/mp3">
+        </audio>
+    </div>
+    <div class="social-links">
+        <a href="https://www.bobross.com"  class="animated-link" target="_blank">Official Website</a>
+        <a href="https://www.facebook.com/TheJoyofPaintingWithBobRoss/"  class="animated-link" target="_blank">Facebook</a>
+        <a href="https://x.com/BobRossOfficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"  class="animated-link" target="_blank">X</a>
+    </div>
+    <p class="reminder">Let’s make some happy little memories today.</p>
+</footer>
+<script src="js/script.js"></script>
+<script src="js/hamburger.js"></script>
+</body>
+</html>

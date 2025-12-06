@@ -1,0 +1,221 @@
+@font-face {
+    font-family: 'KaiseiTokumin';
+    src: url('../font/KaiseiTokumin-Regular.woff2') format('woff2'),
+         url('../font/KaiseiTokumin-Regular.woff') format('woff');
+    font-weight: bold;
+    font-style: normal;
+}
+
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Caveat', cursive;
+    background-image: url('../images/index6.jpg');
+    background-size: cover;
+    background-attachment: fixed;
+    min-height: 100vh;
+    position: relative;
+}
+
+.overlay1 {
+    height: calc(100% - 150px); 
+    pointer-events: none; 
+    position: absolute;
+    top: 0;
+    left: 0;
+    width: 100%;
+    background: rgba(255, 255, 255, 0.7);
+    backdrop-filter: blur(1px);
+    z-index: 0;
+}
+
+header {
+    text-align: center;
+    padding: 4rem 2rem;
+    position: relative;
+    z-index: 1;
+}
+
+h1 {
+    font-family: 'Dancing Script', cursive;
+    font-size: 4rem;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    text-shadow: 2px 2px 4px rgba(0, 0, 0, 0.1);
+}
+
+.intro {
+    font-size: 1.5rem;
+    color: #34495e;
+    max-width: 600px;
+    margin: 0 auto;
+    line-height: 1.6;
+}
+
+.grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    padding: 2rem;
+    max-width: 1200px;
+    margin: 0 auto;
+    position: relative;
+    z-index: 1;
+}
+
+.quote-card {
+    position: relative;
+    background: white;
+    padding: 20px;
+    border-radius: 10px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+    transition: transform 0.3s ease, background 0.3s ease;
+    text-align: center;
+}
+
+.quote-card:hover {
+    background: #f0f8ff;
+    transform: translateY(-5px);
+}
+
+.quote-card::after {
+    content: attr(data-translation);
+    position: absolute;
+    top: 50%;
+    left: 50%;
+    width: 90%;
+    transform: translate(-50%, -50%);
+    background: #f0f8ff;
+    color: black;
+    padding: 10px;
+    border-radius: 10px;
+    font-size: 1.2rem;
+    font-family: 'Dancing Script', cursive;
+    text-align: center;
+    opacity: 0;
+    transition: opacity 0.3s ease;
+    pointer-events: none;
+}
+
+.quote-card:hover .quote-text,
+.quote-card:hover .quote-author {
+    opacity: 0;
+}
+
+.quote-card:hover::after {
+    opacity: 1;
+}
+
+.quote-text {
+    font-size: 1.5rem;
+    line-height: 1.6;
+    color: #2c3e50;
+    margin-bottom: 1rem;
+    font-weight: 500;
+}
+
+.quote-author {
+    font-style: italic;
+    color: #7f8c8d;
+    text-align: right;
+}
+
+@keyframes fadeIn {
+    from { opacity: 0; transform: translateY(20px); }
+    to { opacity: 1; transform: translateY(0); }
+}
+
+.quote-card:nth-child(1) { animation-delay: 0.2s; }
+.quote-card:nth-child(2) { animation-delay: 0.4s; }
+.quote-card:nth-child(3) { animation-delay: 0.6s; }
+.quote-card:nth-child(4) { animation-delay: 0.8s; }
+.quote-card:nth-child(5) { animation-delay: 1s; }
+.quote-card:nth-child(6) { animation-delay: 1.2s; }
+.quote-card:nth-child(7) { animation-delay: 1.4s; }
+.quote-card:nth-child(8) { animation-delay: 1.6s; }
+
+        /* Footer */
+        footer {
+            border-top: 3px solid black;
+            background: linear-gradient(135deg, #2e6b2e, #1e4620);
+            color: white;
+            padding: 1rem;
+            text-align: center;
+        }
+
+        .music-toggle {
+            position: fixed;
+            bottom: 20px;
+            right: 20px;
+            z-index: 1000;
+        }
+
+        .music-button {
+            width: 50px;
+            height: 50px;
+            border-radius: 50%;
+            background: #2e6b2e;
+            border: none;
+            cursor: pointer;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
+            transition: background 0.3s;
+        }
+
+        .music-button:hover {
+            background: #3a7b3a;
+        }
+
+        .speaker-icon {
+            font-size: 24px;
+            color: white;
+        }
+
+        .music-button.muted::after {
+            content: "";
+            position: absolute;
+            width: 30px;
+            height: 2px;
+            background: #e74c3c;
+            transform: rotate(45deg);
+            transform-origin: center;
+        }
+
+        .social-links {
+            font-size: 1rem;
+            margin: 1rem 0;
+        }
+
+        .social-links a {
+            color: gold;
+            text-decoration: none;
+            margin: 0 1rem;
+            transition: opacity 0.3s;
+        }
+
+        .social-links a:hover {
+            opacity: 0.8;
+        }
+
+        .reminder {
+            font-family: 'Poppins';
+            font-size: 1.5rem;
+            margin: 1rem;
+            font-style: italic;
+            color: orange;
+        }
+
+@media (max-width: 768px) {
+    h1 {
+        font-size: 3rem;
+    }
+    .intro {
+        font-size: 1.2rem;
+    }
+}

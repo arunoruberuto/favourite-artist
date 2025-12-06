@@ -1,0 +1,205 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Bob Ross's Paintings</title>
+    <link href="https://fonts.googleapis.com/css2?family=Caveat:wght@400;700&family=Dancing+Script:wght@500&display=swap" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Poppins:wght@400;700&family=Pacifico&display=swap" rel="stylesheet">
+    <link rel="stylesheet" href="css/styles-gallery.css">
+    <link rel="stylesheet" href="css/hamburger.css">
+    <link rel="icon" href="images/bob_logo.png" type="image/png">
+</head>
+<body>
+    <div class="overlay" id="overlay"></div>
+    <div class="sidebar-container" id="sidebar">
+        <button class="toggle-btn" id="toggleBtn">☰</button>
+        <ul class="menu hidden" id="menu">
+            <li class="menu-item"><a href="index.html" class="animated-link">Home</a></li>
+            <li class="menu-item"><a href="bio.html" class="animated-link">Biography</a></li>
+            <li class="menu-item"><a href="gallery.html" class="animated-link">Paintings</a></li>
+            <li class="menu-item"><a href="wisdom.html" class="animated-link">Quotes</a></li>
+        </ul>
+    </div>
+
+    <div class="hero">
+        <div class="image-container">
+            <p id="image-description">Description of Image 1</p>
+            <div class="frame">
+                <img id="framed-image" src="paintings/1.png" alt="Framed Painting">
+            </div>
+            <button id="prev-btn" class="nav-btn left">&lt;</button>
+            <button id="next-btn" class="nav-btn right">&gt;</button>
+        </div>
+    </div>
+    <div class="gallery-text">GALLERY</div>
+
+    <div class="main-content">
+        <div class="description">
+            <p>これは、ボブ・ロスが<em>「The Joy of Painting」で描いたすべての作品です。</em> 各長方形 <span style="background: #777; display: inline-block; width: 12px; height: 12px;"></span> は1枚の絵を表しています。</p>
+            <p>403枚の長方形が時系列順に並んでいます。長方形にカーソルを合わせると、それが表す絵画を見ることができます！クリックすると、絵画が拡大されます！</p>
+        </div>
+        <div class="container">
+            <svg id="grid"></svg>
+            <div id="preview" class="preview">
+                <p id="preview-text"></p>
+                <img id="preview-img" src="" alt="">
+            </div>
+        </div>
+    </div>
+    <div id="fullscreen" class="fullscreen">
+        <img id="fullscreen-img" src="" alt="">
+    </div>
+
+    <footer>
+        <div class="music-toggle">
+            <button class="music-button" onclick="toggleMusic()">
+                <span class="speaker-icon">🔊</span>
+            </button>
+            <audio id="bg-music" loop autoplay>
+                <source src="music/LARRY OWENS - INTERLUDE (BOB ROSS THE JOY OF PAINTING FULL THEME).mp3" type="audio/mp3">
+            </audio>
+        </div>
+        <div class="social-links">
+            <a href="https://www.bobross.com"  class="animated-link" target="_blank">Official Website</a>
+            <a href="https://www.facebook.com/TheJoyofPaintingWithBobRoss/"  class="animated-link" target="_blank">Facebook</a>
+            <a href="https://x.com/BobRossOfficial?ref_src=twsrc%5Egoogle%7Ctwcamp%5Eserp%7Ctwgr%5Eauthor"  class="animated-link" target="_blank">X</a>
+        </div>
+        <p class="reminder">Let’s make some happy little memories today.</p>
+    </footer>
+
+    <script>
+    const grid = document.getElementById('grid');
+    const preview = document.getElementById('preview');
+    const previewImg = document.getElementById('preview-img');
+    const previewText = document.getElementById('preview-text');
+    const fullscreen = document.getElementById('fullscreen');
+    const fullscreenImg = document.getElementById('fullscreen-img');
+
+    const rows = 21, cols = 25, totalImages = 403;
+    const imageSize = 40;
+    let images = [];
+
+    //JSON
+    fetch('https://raw.githubusercontent.com/noruberuto96/WFKadai06/refs/heads/main/descriptions.json')
+        .then(response => response.json())
+        .then(data => {
+            images = data; 
+            generateGrid(); 
+        })
+        .catch(error => console.error("Error loading descriptions:", error));
+
+    // SVG grid
+    function generateGrid() {
+        for (let y = 0; y < rows; y++) {
+            for (let x = 0; x < cols; x++) {
+                let index = y * cols + x;
+                if (index >= images.length) break;
+
+                let rect = document.createElementNS("http://www.w3.org/2000/svg", "rect");
+                rect.setAttribute("x", x * imageSize);
+                rect.setAttribute("y", y * imageSize);
+                rect.setAttribute("width", imageSize);
+                rect.setAttribute("height", imageSize);
+                rect.setAttribute("fill", "#777");
+                rect.setAttribute("stroke", "#999");
+                rect.setAttribute("stroke-width", "1");
+
+             
+                rect.addEventListener("mouseover", function (event) {
+                    previewImg.src = images[index].src;
+                    previewText.innerText = images[index].desc;
+                    preview.style.left = `${event.pageX - 500}px`;
+                    preview.style.top = `${event.pageY - 800}px`;
+                    preview.style.display = "block";
+                });
+
+                rect.addEventListener("mouseout", function () {
+                    preview.style.display = "none";
+                });
+
+                
+                rect.addEventListener("click", function () {
+                    fullscreenImg.src = images[index].src;
+                    fullscreen.style.display = "flex";
+                });
+
+                grid.appendChild(rect);
+            }
+        }
+    }
+
+
+    fullscreen.addEventListener("click", function () {
+        fullscreen.style.display = "none";
+    });
+
+    let slideimages = [];
+    let currentIndex = 0;
+
+    const framedImage = document.getElementById("framed-image");
+    const imageDescription = document.getElementById("image-description");
+    const prevBtn = document.getElementById("prev-btn");
+    const nextBtn = document.getElementById("next-btn");
+
+    // JSON
+    fetch('https://raw.githubusercontent.com/noruberuto96/WFKadai06/refs/heads/main/descriptions.json')
+        .then(response => response.json())
+        .then(data => {
+            slideimages = data.slice(0, 10); 
+            updateImage(); 
+        })
+        .catch(error => console.error("Error loading slideshow data:", error));
+
+    function updateImage() {
+        if (slideimages.length > 0) {
+            framedImage.src = slideimages[currentIndex].src;
+            imageDescription.textContent = slideimages[currentIndex].desc;
+        }
+    }
+
+    prevBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex - 1 + slideimages.length) % slideimages.length;
+        updateImage();
+    });
+
+    nextBtn.addEventListener("click", () => {
+        currentIndex = (currentIndex + 1) % slideimages.length;
+        updateImage();
+    });
+
+    const galleryText = document.querySelector('.gallery-text');
+    if (galleryText) {
+        galleryText.innerHTML = galleryText.textContent.split('').map(letter => 
+            `<span>${letter}</span>`
+        ).join('');
+    }
+
+    window.addEventListener('load', function() {
+        const music = document.getElementById('bg-music');
+        const button = document.querySelector('.music-button');
+            
+        // Attempt to play music automatically
+        music.play().catch(error => {
+            // Handle autoplay restrictions
+            console.log('Autoplay prevented, click button to play');
+            button.classList.add('muted');
+        });
+    });
+
+    function toggleMusic() {
+        const music = document.getElementById('bg-music');
+        const button = document.querySelector('.music-button');
+            
+        if (music.paused) {
+            music.play();
+            button.classList.remove('muted');
+        } else {
+            music.pause();
+            button.classList.add('muted');
+        }
+    }
+    </script>
+    <script src="js/hamburger.js"></script>
+</body>
+</html>
