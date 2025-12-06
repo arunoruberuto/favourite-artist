@@ -1,11 +1,9 @@
-        // Auto-play music on page load
+        // Page Load -> auto play music
         window.addEventListener('load', function() {
             const music = document.getElementById('bg-music');
             const button = document.querySelector('.music-button');
             
-            // Attempt to play music automatically
             music.play().catch(error => {
-                // Handle autoplay restrictions
                 console.log('Autoplay prevented, click button to play');
                 button.classList.add('muted');
             });

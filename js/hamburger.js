@@ -1,4 +1,3 @@
-            // Sidebar functionality
             const sidebar = document.getElementById('sidebar');
             const toggleBtn = document.getElementById('toggleBtn');
             const menu = document.getElementById('menu');

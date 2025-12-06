@@ -81,7 +81,7 @@
     let images = [];
 
     //JSON
-    fetch('https://raw.githubusercontent.com/noruberuto96/WFKadai06/refs/heads/main/descriptions.json')
+    fetch('https://raw.githubusercontent.com/arunoruberuto/favourite-artist/refs/heads/main/descriptions.json')
         .then(response => response.json())
         .then(data => {
             images = data; 
@@ -89,7 +89,7 @@
         })
         .catch(error => console.error("Error loading descriptions:", error));
 
-    // SVG grid
+    // SVG grid-Test
     function generateGrid() {
         for (let y = 0; y < rows; y++) {
             for (let x = 0; x < cols; x++) {
@@ -143,7 +143,7 @@
     const nextBtn = document.getElementById("next-btn");
 
     // JSON
-    fetch('https://raw.githubusercontent.com/noruberuto96/WFKadai06/refs/heads/main/descriptions.json')
+    fetch('https://raw.githubusercontent.com/arunoruberuto/favourite-artist/refs/heads/main/descriptions.json')
         .then(response => response.json())
         .then(data => {
             slideimages = data.slice(0, 10); 
@@ -181,7 +181,6 @@
             
         // Attempt to play music automatically
         music.play().catch(error => {
-            // Handle autoplay restrictions
             console.log('Autoplay prevented, click button to play');
             button.classList.add('muted');
         });

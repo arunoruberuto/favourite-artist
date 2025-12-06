@@ -59,7 +59,7 @@
             font-size: 1.5rem;
         }
 
-        /* Cloud Animation */
+        /* Lil Cloud Animation */
         .cloud {
             position: absolute;
             width: 150px;
@@ -100,7 +100,7 @@
             box-shadow: 0 4px 8px rgba(0, 0, 0, 0.2);
         }
 
-        /* Footer */
+        /* Footer Section */
         footer {
             border-top: 3px solid black;
             background: linear-gradient(135deg, #2e6b2e, #1e4620);
